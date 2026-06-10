@@ -983,7 +983,7 @@ footer {
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
     <a href="tel:5592400976">(559) 240-0976</a>
-    <a href="dylanlindberg747@gmail.com">Email Us</a>
+    <a href="mailto:dylanlindberg747@gmail.com">Email Us</a>
   </div>
   <div class="footer-copy">&copy; 2026 Lindberg Tech Solutions. All rights reserved.</div>
 </footer>
@@ -1043,14 +1043,14 @@ function handleFormSubmit(e) {
     'Service Needed: ' + service + '\n\n' +
     'Problem Description:\n' + desc
   );
-
+  
   window.location.href = 'mailto:dylanlindberg747@gmail.com?subject=' + subject + '&body=' + body;
-
+  var originalHTML = btn.innerHTML;
   var btn = document.querySelector('.form-submit');
-  btn.textContent = 'Opening your email app…';
+  btn.innerHTML = '✓ Opening your email app…';
   btn.style.background = '#16a34a';
   setTimeout(function() {
-    btn.textContent = 'Send Message';
+   btn.innerHTML = originalHTML;
     btn.style.background = '';
   }, 3000);
 }
