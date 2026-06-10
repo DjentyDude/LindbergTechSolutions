@@ -799,7 +799,7 @@ footer {
     <p class="sec-tag" style="justify-content:center;">Reviews</p>
     <h2 class="sec-heading" style="color:#fff;">Happy with the service?</h2>
     <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:2.5rem;">Google reviews help local customers find us and tell us we're doing things right. If we fixed your device, a quick review goes a long way.</p>
-    <a href="https://g.page/r/CZKoxccNoEoPEAI/review" target="_blank" rel="noopener"
+    <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" rel="noopener"
       style="display:inline-flex;align-items:center;gap:12px;background:#fff;color:#1a202c;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:16px 32px;border-radius:8px;transition:transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.2);"
       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.3)'"
       onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.2)'">
@@ -811,7 +811,7 @@ footer {
       </svg>
       Leave a Google Review
     </a>
-    <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:1.25rem;"></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:1.25rem;">Link will go live once the Google Business profile is set up.</p>
   </div>
 </section>
 
@@ -881,8 +881,7 @@ footer {
           <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">By appointment</span></div>
         </div>
         <div class="hours-note">
-          Call or message us <a href="tel:5592400976" style="color:var(--accent);font-weight:700;">(559) 240-0976</a> to schedule. 
-          Or email us below!
+          Call or text <a href="tel:5592400976" style="color:var(--accent);font-weight:700;">(559) 240-0976</a> to schedule. I'll work around your availability.
         </div>
       </div>
       <div class="service-area-block">
@@ -909,9 +908,9 @@ footer {
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <p class="sec-tag">Get in Touch</p>  
+        <p class="sec-tag">Get in Touch</p>
         <h2 class="sec-heading">Book a Repair</h2>
-        <p class="contact-intro">Email dylanlindberg747@gmail.com or fill out the form for a quote.</p>
+        <p class="contact-intro">Email us at dylanlindberg747@gmail.com or fill out the form for a quote.</p>
 
         <div class="contact-item">
           <div class="contact-icon">
@@ -961,11 +960,48 @@ footer {
           <label>Describe the Problem</label>
           <textarea id="f-desc" placeholder="Tell me what's going on with your device. model, symptoms, issues, anything relevant"></textarea>
         </div>
-        <button class="form-submit" onclick="handleFormSubmit(event)">
+        <div data-fs-success style="display:none;color:#16a34a;font-weight:600;margin-bottom:1rem;">
+  ✓ Message sent! I'll be in touch soon.
+</div>
+<div data-fs-error style="display:none;color:#dc2626;margin-bottom:1rem;">
+  Something went wrong. Please try again or call/text directly.
+</div>
+
+<form id="contact-form">
+  <div class="form-group">
+    <label>Your Name</label>
+    <input type="text" name="name" id="f-name" placeholder="Your name" data-fs-field />
+  </div>
+  <div class="form-group">
+    <label>Phone or Email</label>
+    <input type="text" name="contact" id="f-contact" placeholder="Best way to reach you" data-fs-field />
+  </div>
+  <div class="form-group">
+    <label>Service Needed</label>
+    <select name="service" id="f-service" data-fs-field>
+      <option value="">Select a service...</option>
+      <option>Cellphone Repair</option>
+      <option>Laptop Repair</option>
+      <option>PC Repair</option>
+      <option>Console Repair</option>
+      <option>Legacy / Retro Device</option>
+      <option>Not sure — need a diagnosis</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Describe the Problem</label>
+    <textarea name="description" id="f-desc" placeholder="Tell me what's going on with your device. model, symptoms, issues, anything relevant" data-fs-field></textarea>
+  </div>
+  <button class="form-submit" type="submit" data-fs-submit-btn>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    Send Message
+  </button>
+  <p class="form-note">Or just call/text — (559) 240-0976</p>
+</form>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           Send Message
         </button>
-        <p class="form-note"></p>
+        <p class="form-note">Or just call/text — (559) 240-0976</p>
       </div>
     </div>
   </div>
@@ -983,7 +1019,7 @@ footer {
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
     <a href="tel:5592400976">(559) 240-0976</a>
-    <a href="mailto:dylanlindberg747@gmail.com">Email Us</a>
+    <a href="dylanlindberg747@gmail.com">Email Us</a>
   </div>
   <div class="footer-copy">&copy; 2026 Lindberg Tech Solutions. All rights reserved.</div>
 </footer>
@@ -1029,7 +1065,11 @@ function toggleFaq(btn) {
 }
 
 // ── FORM ───────────────────────────────────────────────────────────────────
-function handleFormSubmit(e) {
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mrevlnle' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   e.preventDefault();
   var name    = document.getElementById('f-name').value.trim()    || '(not provided)';
   var contact = document.getElementById('f-contact').value.trim() || '(not provided)';
@@ -1043,14 +1083,14 @@ function handleFormSubmit(e) {
     'Service Needed: ' + service + '\n\n' +
     'Problem Description:\n' + desc
   );
-  
+
   window.location.href = 'mailto:dylanlindberg747@gmail.com?subject=' + subject + '&body=' + body;
-  var originalHTML = btn.innerHTML;
+
   var btn = document.querySelector('.form-submit');
-  btn.innerHTML = '✓ Opening your email app…';
+  btn.textContent = 'Opening your email app…';
   btn.style.background = '#16a34a';
   setTimeout(function() {
-   btn.innerHTML = originalHTML;
+    btn.textContent = 'Send Message';
     btn.style.background = '';
   }, 3000);
 }
