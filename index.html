@@ -799,7 +799,7 @@ footer {
     <p class="sec-tag" style="justify-content:center;">Reviews</p>
     <h2 class="sec-heading" style="color:#fff;">Happy with the service?</h2>
     <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:2.5rem;">Google reviews help local customers find us and tell us we're doing things right. If we fixed your device, a quick review goes a long way.</p>
-    <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review" target="_blank" rel="noopener"
+    <a href="https://g.page/r/CZKoxccNoEoPEAI/review" target="_blank" rel="noopener"
       style="display:inline-flex;align-items:center;gap:12px;background:#fff;color:#1a202c;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:16px 32px;border-radius:8px;transition:transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.2);"
       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.3)'"
       onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.2)'">
@@ -811,7 +811,7 @@ footer {
       </svg>
       Leave a Google Review
     </a>
-    <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:1.25rem;"></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:1.25rem;">Your review helps others find our services and shows your support for our work.</p>
   </div>
 </section>
 
@@ -827,7 +827,7 @@ footer {
           Do you have a shop I can drop off at?
           <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </button>
-        <div class="faq-a">No, Lindberg Tech Solutions is currently a mobile operation. I come to you at your home or workplace.</div>
+        <div class="faq-a">No, Lindberg Tech Solutions is currently a mobile operation. I come to you at your home, workplace, or wherever is most convenient for you.</div>
       </div>
 
       <div class="faq-item">
@@ -843,7 +843,7 @@ footer {
           How do I get a price before committing?
           <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </button>
-        <div class="faq-a">Call or text me with a description of the problem. I'll give you an honest estimate and let you know if I can fix it before we schedule anything.</div>
+        <div class="faq-a">Call or text, or email below with a description of the problem. I'll give you an honest estimate and let you know if I can fix it before we schedule anything.</div>
       </div>
 
       <div class="faq-item">
@@ -861,7 +861,7 @@ footer {
           What payment methods do you accept?
           <span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
         </button>
-        <div class="faq-a">Cash, Venmo, and CashApp. Additional methods may be added. Please ask when booking.</div>
+        <div class="faq-a">Cash, Venmo, CashApp, and PayPal. Additional methods may be added. Please ask when booking.</div>
       </div>
 
     </div>
@@ -881,7 +881,7 @@ footer {
           <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">By appointment</span></div>
         </div>
         <div class="hours-note">
-          Call or text <a href="tel:5592400976" style="color:var(--accent);font-weight:700;">(559) 240-0976</a> to schedule. I'll work around your availability.
+          Call or text <a href="tel:5592400976" style="color:var(--accent);font-weight:700;">(559) 240-0976</a> to schedule.
         </div>
       </div>
       <div class="service-area-block">
@@ -936,24 +936,24 @@ footer {
       </div>
 
       <div class="contact-form">
-        <div data-fs-success style="display:none;color:#16a34a;font-weight:600;margin-bottom:1rem;">
+        <div id="form-success" style="display:none;color:#16a34a;font-weight:600;margin-bottom:1rem;">
           ✓ Message sent! I'll be in touch soon.
         </div>
-        <div data-fs-error style="display:none;color:#dc2626;margin-bottom:1rem;">
-          Something went wrong. Please try again or call/text directly.
+        <div id="form-error" style="display:none;color:#dc2626;margin-bottom:1rem;">
+          Something went wrong. Please try again or call/text (559) 240-0976.
         </div>
-        <form id="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/mrevlnle" method="POST">
           <div class="form-group">
             <label>Your Name</label>
-            <input type="text" name="name" placeholder="Your name" data-fs-field />
+            <input type="text" name="name" placeholder="Your name" />
           </div>
           <div class="form-group">
             <label>Phone or Email</label>
-            <input type="text" name="contact" placeholder="Best way to reach you" data-fs-field />
+            <input type="text" name="contact" placeholder="Best way to reach you" />
           </div>
           <div class="form-group">
             <label>Service Needed</label>
-            <select name="service" data-fs-field>
+            <select name="service">
               <option value="">Select a service...</option>
               <option>Cellphone Repair</option>
               <option>Laptop Repair</option>
@@ -965,9 +965,9 @@ footer {
           </div>
           <div class="form-group">
             <label>Describe the Problem</label>
-            <textarea name="description" placeholder="Tell me what's going on with your device. model, symptoms, issues, anything relevant" data-fs-field></textarea>
+            <textarea name="description" placeholder="Tell me what's going on with your device. model, symptoms, issues, anything relevant"></textarea>
           </div>
-          <button class="form-submit" type="submit" data-fs-submit-btn>
+          <button class="form-submit" type="submit">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Send Message
           </button>
@@ -1052,10 +1052,42 @@ window.addEventListener('scroll', function() {
 </script>
 
 <script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'mrevlnle' });
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = contactForm.querySelector('.form-submit');
+      var successBox = document.getElementById('form-success');
+      var errorBox = document.getElementById('form-error');
+      successBox.style.display = 'none';
+      errorBox.style.display = 'none';
+      var originalBtn = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          contactForm.reset();
+          successBox.style.display = 'block';
+        } else {
+          errorBox.style.display = 'block';
+        }
+      })
+      .catch(function () {
+        errorBox.style.display = 'block';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.innerHTML = originalBtn;
+      });
+    });
+  }
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
